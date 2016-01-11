@@ -1,0 +1,43 @@
+{
+  "context": "http://schema.org",
+  "type": "Social event",
+  "location": {
+    "type": "Place",
+    "address": {
+      "type": "PostalAddress",
+      "addressLocality": "Barcelona, Spain",
+      "postalCode": "08001",
+      "streetAddress": "C/ Fontanella 2",
+      "name": "Mobile World Centre"
+    },
+    "url": "https://www.mobileworldcentre.com"
+  },
+  "duration": "PT2H",
+  "url": "/event/20141222-barcelonajs",
+  "startDate": "20141222T19:00",
+  "name": "BarcelonaJS",
+  "id": "20141222-barcelonajs",
+  "organizer": {
+    "type": "Organization",
+    "address": {
+      "type": "PostalAddress",
+      "addressLocality": "Barcelona, Spain",
+      "postalCode": "08003",
+      "streetAddress": "C/ Mare de Deu del Pilar 20"
+    },
+    "email": "hola(at)barcelonajs.org",
+    "name": "BarcelonaJS",
+    "url": "http://barcelonajs.org"
+  },
+  "performer": [
+    {
+      "type": "Person",
+      "name": "Javier Arias",
+      "id": "20141222-fullstack-message-bus-with-javascript-rabbitmq-and-postaljs",
+      "twitter": "@javier_arilos",
+      "sameAs": "https://twitter.com/@@javier_arilos",
+      "url": "/talk/20141222-fullstack-message-bus-with-javascript-rabbitmq-and-postaljs.html"
+    }
+  ],
+  "layout": "page.html"
+}

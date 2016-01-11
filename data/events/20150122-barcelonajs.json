@@ -1,0 +1,51 @@
+{
+  "context": "http://schema.org",
+  "type": "Social event",
+  "location": {
+    "type": "Place",
+    "address": {
+      "type": "PostalAddress",
+      "addressLocality": "Barcelona, Spain",
+      "postalCode": "08001",
+      "streetAddress": "C/ Fontanella 2",
+      "name": "Mobile World Centre"
+    },
+    "url": "https://www.mobileworldcentre.com"
+  },
+  "duration": "PT2H",
+  "url": "/event/20150122-barcelonajs",
+  "startDate": "20150122T19:00",
+  "name": "BarcelonaJS",
+  "id": "20150122-barcelonajs",
+  "organizer": {
+    "type": "Organization",
+    "address": {
+      "type": "PostalAddress",
+      "addressLocality": "Barcelona, Spain",
+      "postalCode": "08003",
+      "streetAddress": "C/ Mare de Deu del Pilar 20"
+    },
+    "email": "hola(at)barcelonajs.org",
+    "name": "BarcelonaJS",
+    "url": "http://barcelonajs.org"
+  },
+  "performer": [
+    {
+      "type": "Person",
+      "name": "Marijn Haverbeke",
+      "id": "20150122-serious-text-editing-in-the-browser",
+      "twitter": "marijnjh",
+      "sameAs": "https://twitter.com/@marijnjh",
+      "url": "/talk/20150122-serious-text-editing-in-the-browser.html"
+    },
+    {
+      "type": "Person",
+      "name": "Jorge Dias",
+      "id": "20150122-development-environments-using-fig",
+      "twitter": "dias_jorge",
+      "sameAs": "https://twitter.com/@dias_jorge",
+      "url": "/talk/20150122-development-environments-using-fig.html"
+    }
+  ],
+  "layout": "page.html"
+}

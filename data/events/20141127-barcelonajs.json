@@ -1,0 +1,51 @@
+{
+  "context": "http://schema.org",
+  "type": "Social event",
+  "location": {
+    "type": "Place",
+    "address": {
+      "type": "PostalAddress",
+      "addressLocality": "Barcelona, Spain",
+      "postalCode": "08001",
+      "streetAddress": "C/ Fontanella 2",
+      "name": "Mobile World Centre"
+    },
+    "url": "https://www.mobileworldcentre.com"
+  },
+  "duration": "PT2H",
+  "url": "/event/20141127-barcelonajs",
+  "startDate": "20141127T19:00",
+  "name": "BarcelonaJS",
+  "id": "20141127-barcelonajs",
+  "organizer": {
+    "type": "Organization",
+    "address": {
+      "type": "PostalAddress",
+      "addressLocality": "Barcelona, Spain",
+      "postalCode": "08003",
+      "streetAddress": "C/ Mare de Deu del Pilar 20"
+    },
+    "email": "hola(at)barcelonajs.org",
+    "name": "BarcelonaJS",
+    "url": "http://barcelonajs.org"
+  },
+  "performer": [
+    {
+      "type": "Person",
+      "name": "Eduard Tomàs",
+      "id": "20141127-una-tapa-de-es6-por-favor",
+      "twitter": "eiximenis",
+      "sameAs": "https://twitter.com/@eiximenis",
+      "url": "/talk/20141127-una-tapa-de-es6-por-favor.html"
+    },
+    {
+      "type": "Person",
+      "name": "Sergi Cortés",
+      "id": "20141127-una-simple-app-con-meteor-10",
+      "twitter": "sergi_c",
+      "sameAs": "https://twitter.com/@sergi_c",
+      "url": "/talk/20141127-una-simple-app-con-meteor-10.html"
+    }
+  ],
+  "layout": "page.html"
+}

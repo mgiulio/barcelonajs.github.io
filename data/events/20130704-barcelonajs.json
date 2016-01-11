@@ -1,0 +1,62 @@
+{
+  "context": "http://schema.org",
+  "type": "Social event",
+  "location": {
+    "type": "Place",
+    "address": {
+      "type": "PostalAddress",
+      "addressLocality": "Barcelona, Spain",
+      "postalCode": "08001",
+      "streetAddress": "C/ Fontanella 2",
+      "name": "Mobile World Centre"
+    },
+    "url": "https://www.mobileworldcentre.com"
+  },
+  "duration": "PT2H",
+  "url": "/event/20130704-barcelonajs",
+  "startDate": "20130704T19:00",
+  "name": "BarcelonaJS",
+  "id": "20130704-barcelonajs",
+  "organizer": {
+    "type": "Organization",
+    "address": {
+      "type": "PostalAddress",
+      "addressLocality": "Barcelona, Spain",
+      "postalCode": "08003",
+      "streetAddress": "C/ Mare de Deu del Pilar 20"
+    },
+    "email": "hola(at)barcelonajs.org",
+    "name": "BarcelonaJS",
+    "url": "http://barcelonajs.org"
+  },
+  "performer": [
+    {
+      "type": "Person",
+      "name": "Toni Hermoso Pulido",
+      "id": "20130704-offline-storage-and-pouchdb",
+      "twitter": "toniher",
+      "sameAs": "https://twitter.com/@toniher",
+      "url": "/talk/20130704-offline-storage-and-pouchdb.html",
+      "image": "https://pbs.twimg.com/profile_images/451107796612702208/CDsEX0oa.jpeg"
+    },
+    {
+      "type": "Person",
+      "name": "Paulo Ávila",
+      "id": "20130704-motion-detection-in-video-through-javascript",
+      "twitter": "demoive",
+      "sameAs": "https://twitter.com/@demoive",
+      "url": "/talk/20130704-motion-detection-in-video-through-javascript.html",
+      "image": "https://pbs.twimg.com/profile_images/378800000386587077/8c68f64601fa8bece24c5dfe15d857a2.jpeg"
+    },
+    {
+      "type": "Person",
+      "name": "Clinton Gormley",
+      "id": "20130704-introduction-to-elasticsearch",
+      "twitter": "clintongormley",
+      "sameAs": "https://twitter.com/@clintongormley",
+      "url": "/talk/20130704-introduction-to-elasticsearch.html",
+      "image": "https://pbs.twimg.com/profile_images/83441474/drtech.jpg"
+    }
+  ],
+  "layout": "page.html"
+}

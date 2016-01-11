@@ -1,0 +1,61 @@
+{
+  "context": "http://schema.org",
+  "type": "Social event",
+  "location": {
+    "type": "Place",
+    "address": {
+      "type": "PostalAddress",
+      "addressLocality": "Barcelona, Spain",
+      "postalCode": "08001",
+      "streetAddress": "C/ Fontanella 2",
+      "name": "Mobile World Centre"
+    },
+    "url": "https://www.mobileworldcentre.com"
+  },
+  "duration": "PT2H",
+  "url": "/event/20150422-barcelonajs",
+  "startDate": "20150422T19:00",
+  "name": "BarcelonaJS",
+  "id": "20150422-barcelonajs",
+  "organizer": {
+    "type": "Organization",
+    "address": {
+      "type": "PostalAddress",
+      "addressLocality": "Barcelona, Spain",
+      "postalCode": "08003",
+      "streetAddress": "C/ Mare de Deu del Pilar 20"
+    },
+    "email": "hola(at)barcelonajs.org",
+    "name": "BarcelonaJS",
+    "url": "http://barcelonajs.org"
+  },
+  "performer": [
+    {
+      "type": "Person",
+      "name": "Sergio Gimeno",
+      "id": "20150422-introduction-to-browserify",
+      "twitter": "_sgimeno",
+      "sameAs": "https://twitter.com/@_sgimeno",
+      "url": "/talk/20150422-introduction-to-browserify.html",
+      "image": "https://pbs.twimg.com/profile_images/1362468987/paris.jpg"
+    },
+    {
+      "type": "Person",
+      "name": "Jean Carlos Meninno",
+      "id": "20150422-tips-for-using-browserify-in-a-ever-changing-enviroment",
+      "twitter": "eth0lo",
+      "sameAs": "https://twitter.com/@eth0lo",
+      "url": "/talk/20150422-tips-for-using-browserify-in-a-ever-changing-enviroment.html",
+      "image": "https://avatars2.githubusercontent.com/u/657235?v=3&s=460"
+    },
+    {
+      "type": "Person",
+      "name": "",
+      "id": "20150422-flash-talks-and-discussions",
+      "twitter": "",
+      "sameAs": "https://twitter.com/@",
+      "url": "/talk/20150422-flash-talks-and-discussions.html"
+    }
+  ],
+  "layout": "page.html"
+}

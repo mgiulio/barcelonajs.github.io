@@ -1,0 +1,44 @@
+{
+  "context": "http://schema.org",
+  "type": "Social event",
+  "location": {
+    "type": "Place",
+    "address": {
+      "type": "PostalAddress",
+      "addressLocality": "Barcelona, Spain",
+      "postalCode": "08001",
+      "streetAddress": "C/ Fontanella 2",
+      "name": "Mobile World Centre"
+    },
+    "url": "https://www.mobileworldcentre.com"
+  },
+  "duration": "PT2H",
+  "url": "/event/20140527-barcelonajs",
+  "startDate": "20140527T19:00",
+  "name": "BarcelonaJS",
+  "id": "20140527-barcelonajs",
+  "organizer": {
+    "type": "Organization",
+    "address": {
+      "type": "PostalAddress",
+      "addressLocality": "Barcelona, Spain",
+      "postalCode": "08003",
+      "streetAddress": "C/ Mare de Deu del Pilar 20"
+    },
+    "email": "hola(at)barcelonajs.org",
+    "name": "BarcelonaJS",
+    "url": "http://barcelonajs.org"
+  },
+  "performer": [
+    {
+      "type": "Person",
+      "name": "David Rodenas",
+      "id": "20140527-js-and-patterns",
+      "twitter": "drpicox",
+      "sameAs": "https://twitter.com/@drpicox",
+      "url": "/talk/20140527-js-and-patterns.html",
+      "image": "https://avatars1.githubusercontent.com/u/2758345?s=460"
+    }
+  ],
+  "layout": "page.html"
+}
