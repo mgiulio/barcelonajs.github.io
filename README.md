@@ -15,6 +15,7 @@ $ git clone https://github.com/BarcelonaJS/BarcelonaJS.git src/data
 Using npm:
 
 ```
+$ npm install
 $ npm run dev
 ```
 
