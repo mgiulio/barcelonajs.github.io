@@ -97,7 +97,6 @@ section {
   }
   .sponsor-logo, .chapter-logo {
     margin-top: 1rem;
-    width: 175px;
     display: block;
     margin: 0 auto;
     height: 175px;
@@ -219,5 +218,10 @@ input[type="email"] {
   }
   nav.menu .menu-items li {
     padding: 0 .5rem;
+  }
+}
+@media(max-width:390px) {
+  section .sponsor-logo, section .chapter-logo {
+    background-size: 100px;
   }
 }
