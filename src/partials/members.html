@@ -1,0 +1,29 @@
+<section class="breadcrumb row middle-xs">
+  <div class="col-xs-12 center-xs">
+    <h2>About</h2>
+  </div>
+</section>
+
+<section class="members wrap center-xs">
+  <p><a href="http://barcelonajs.org">BarcelonaJS</a> is a usergroup focused on <b>JavaScript</b> and related topics. We meet regularly at the <a href="https://www.mobileworldcentre.com">Mobile World Centre</a></p>
+
+  <h2 class="title">Team</h2>
+  <div class="row center-xs">
+    {{#each members}}
+      <article class="organizer col-xs-12 col-md-4">
+        <img class="avatar" src="{{portrait}}">
+        <h4 class="name">{{name}}</h4>
+        <h6 class="talk-title">{{bio}}</h6>
+        <a href="https://twitter.com/{{twitter}}">
+          <img src="assets/img/icons/twitter.svg" class="icon-member">
+        </a>
+        <a href="https://github.com/{{github}}">
+          <img src="assets/img/icons/github.svg" class="icon-member">
+        </a>
+        <a href="mailto:{{email}}">
+          <img src="assets/img/icons/email.svg" class="icon-member">
+        </a>
+      </article>
+    {{/each}}
+  </div>
+</section>
