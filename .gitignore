@@ -32,3 +32,6 @@ src/data
 
 # OS X Files
 *.DS_Store
+
+data
+data/
