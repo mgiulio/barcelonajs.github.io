@@ -1,0 +1,34 @@
+{
+  "context": "http://schema.org",
+  "type": "Social event",
+  "location": {
+    "type": "Place",
+    "address": {
+      "type": "PostalAddress",
+      "addressLocality": " Barcelona",
+      "postalCode": " Placa Pau Vila 1",
+      "streetAddress": "Palau De Mar",
+      "name": "Black Lab Brewhouse"
+    },
+    "url": "https://www.mobileworldcentre.com"
+  },
+  "duration": "PT2H",
+  "url": "/event/20160309-beerjs.html",
+  "startDate": "2016-03-09T19:00:00Z",
+  "id": "20160309-beerjs",
+  "organizer": {
+    "type": "Organization",
+    "address": {
+      "type": "PostalAddress",
+      "addressLocality": "Barcelona, Spain",
+      "postalCode": "08003",
+      "streetAddress": "C/ Mare de Deu del Pilar 20"
+    },
+    "email": "hola(at)barcelonajs.org",
+    "name": "BarcelonaJS",
+    "url": "http://barcelonajs.org"
+  },
+  "github": "https://api.github.com/repos/BarcelonaJS/planning/issues/12",
+  "name": "BeerJS",
+  "about": "Barcelona.JS is a usergroup focused on JavaScript and related topics."
+}

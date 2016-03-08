@@ -1,0 +1,81 @@
+{
+  "context": "http://schema.org",
+  "type": "Social event",
+  "location": {
+    "type": "Place",
+    "address": {
+      "type": "PostalAddress",
+      "addressLocality": " Barcelona",
+      "postalCode": " 08001",
+      "streetAddress": "C/ Fontella 2",
+      "name": "Mobile World Centre"
+    },
+    "url": "http://barcelonajs.org",
+    "duration": "P2H"
+  },
+  "doorTime": "18:45",
+  "inLanguage": {
+    "type": "Language",
+    "name": "English"
+  },
+  "startDate": "2016-03-15T18:45:00Z",
+  "id": "20160315-barcelonajs-march-2016",
+  "organizer": {
+    "type": "Organization",
+    "address": {
+      "type": "PostalAddress",
+      "addressLocality": "Barcelona, Spain",
+      "postalCode": "08003",
+      "streetAddress": "C/ Mare de Deu del Pilar 20"
+    },
+    "email": "hola(at)barcelonajs.org",
+    "name": "BarcelonaJS",
+    "url": "http://barcelonajs.org"
+  },
+  "github": "https://api.github.com/repos/BarcelonaJS/planning/issues/14",
+  "url": "/event/20160315-barcelonajs.html",
+  "name": "BarcelonaJS",
+  "about": "Barcelona.JS is a usergroup focused on JavaScript and related topics.",
+  "performer": [
+    {
+      "type": "Person",
+      "image": "https://avatars.githubusercontent.com/u/1311781?v=3",
+      "name": "Jesus Quintana",
+      "id": "20160314-basic-redux",
+      "sameAs": "https://api.github.com/users/marduke182",
+      "url": "/talk/20160314-basic-redux.html"
+    },
+    {
+      "type": "Person",
+      "image": "https://avatars.githubusercontent.com/u/242119?v=3",
+      "name": "Francisco",
+      "id": "20160314-hermes-asynchronous-microservices-in-your-frontend",
+      "sameAs": "https://api.github.com/users/fmvilas",
+      "url": "/talk/20160314-hermes-asynchronous-microservices-in-your-frontend.html"
+    },
+    {
+      "type": "Person",
+      "image": "https://avatars.githubusercontent.com/u/242119?v=3",
+      "name": "Francisco",
+      "id": "20160314-hermes-asynchronous-microservices-right-to-your-frontend",
+      "sameAs": "https://api.github.com/users/fmvilas",
+      "url": "/talk/20160314-hermes-asynchronous-microservices-right-to-your-frontend.html"
+    },
+    {
+      "type": "Person",
+      "image": "https://avatars.githubusercontent.com/u/1311781?v=3",
+      "name": "Jesus Quintana",
+      "id": "20160315-basic-redux",
+      "sameAs": "https://api.github.com/users/marduke182",
+      "url": "/talk/20160315-basic-redux.html"
+    },
+    {
+      "type": "Person",
+      "image": "https://avatars.githubusercontent.com/u/242119?v=3",
+      "name": "Francisco",
+      "id": "20160315-hermes-asynchronous-microservices-right-to-your-frontend",
+      "sameAs": "https://api.github.com/users/fmvilas",
+      "url": "/talk/20160315-hermes-asynchronous-microservices-right-to-your-frontend.html"
+    }
+  ]
+}

@@ -35,5 +35,15 @@
   "github": "https://api.github.com/repos/BarcelonaJS/BarcelonaJS/issues/4",
   "url": "/event/20160210-barcelonajs-february-2016.html",
   "name": "BarcelonaJS February 2016",
-  "about": "Barcelona.JS is a usergroup focused on JavaScript and related topics."
+  "about": "Barcelona.JS is a usergroup focused on JavaScript and related topics.",
+  "performer": [
+    {
+      "type": "Person",
+      "image": "https://avatars.githubusercontent.com/u/1560743?v=3",
+      "name": "Sven Anders Robbestad",
+      "id": "20160210-the-frontend-developers-workflow",
+      "sameAs": "https://api.github.com/users/svenanders",
+      "url": "/talk/20160210-the-frontend-developers-workflow.html"
+    }
+  ]
 }
