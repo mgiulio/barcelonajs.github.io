@@ -39,7 +39,7 @@ var bcnjs = function bcnjs(opts) {
 
     for (var i = 0; i < metadata.events.length; i++) {
       var content = JSON.parse(metadata.events[i].contents.toString('utf-8'));
-      var date = moment(content.startDate, 'YYYYMMDDTHHmm').add(2, 'days').unix();
+      var date = moment(content.startDate, 'YYYYMMDDTHHmm').add(1, 'minutes').unix();
       if (date >= moment().unix()) {
         tmpEvent = i;
       }
@@ -57,7 +57,7 @@ var bcnjs = function bcnjs(opts) {
       if (nextEvent.performer) {
         for (var j = 0; j < nextEvent.performer.length; j++) {
           var talk = files['data/talks/' + nextEvent.performer[j].id + '.md'];
-          if (talk.name) {
+          if (talk && talk.name) {
             nextEvent.talks.push(talk);
           }
         }
