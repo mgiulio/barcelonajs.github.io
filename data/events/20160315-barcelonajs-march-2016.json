@@ -41,30 +41,6 @@
       "type": "Person",
       "image": "https://avatars.githubusercontent.com/u/1311781?v=3",
       "name": "Jesus Quintana",
-      "id": "20160314-basic-redux",
-      "sameAs": "https://api.github.com/users/marduke182",
-      "url": "/talk/20160314-basic-redux.html"
-    },
-    {
-      "type": "Person",
-      "image": "https://avatars.githubusercontent.com/u/242119?v=3",
-      "name": "Francisco",
-      "id": "20160314-hermes-asynchronous-microservices-in-your-frontend",
-      "sameAs": "https://api.github.com/users/fmvilas",
-      "url": "/talk/20160314-hermes-asynchronous-microservices-in-your-frontend.html"
-    },
-    {
-      "type": "Person",
-      "image": "https://avatars.githubusercontent.com/u/242119?v=3",
-      "name": "Francisco",
-      "id": "20160314-hermes-asynchronous-microservices-right-to-your-frontend",
-      "sameAs": "https://api.github.com/users/fmvilas",
-      "url": "/talk/20160314-hermes-asynchronous-microservices-right-to-your-frontend.html"
-    },
-    {
-      "type": "Person",
-      "image": "https://avatars.githubusercontent.com/u/1311781?v=3",
-      "name": "Jesus Quintana",
       "id": "20160315-basic-redux",
       "sameAs": "https://api.github.com/users/marduke182",
       "url": "/talk/20160315-basic-redux.html"
