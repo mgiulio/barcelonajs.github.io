@@ -29,6 +29,7 @@ function normalize(options) {
   return options;
 }
 
+
 var bcnjs = function bcnjs(opts) {
   opts = normalize(opts);
 
@@ -36,7 +37,23 @@ var bcnjs = function bcnjs(opts) {
     var metadata = metalsmith.metadata();
     var tmpEvent;
     var nextEvent;
+    var totalPreviousTalks = 10;
 
+    // Formats the talks information from the files
+    var formatEventTalks = function formatEventTalks(event) {
+      var result = [];
+      if (event.performer) {
+        for (var j = 0; j < event.performer.length; j++) {
+          var talk = files['data/talks/' + event.performer[j].id + '.md'];
+          if (talk && talk.name) {
+            result.push(talk)
+          }
+        }
+      }
+      return result;
+    }
+
+    // Get the position of the nextEvent
     for (var i = 0; i < metadata.events.length; i++) {
       var content = JSON.parse(metadata.events[i].contents.toString('utf-8'));
       var date = moment(content.startDate, 'YYYYMMDDTHHmm').add(1, 'minutes').unix();
@@ -45,23 +62,18 @@ var bcnjs = function bcnjs(opts) {
       }
     }
 
+    // Initialize the nextEvent
     var nextEvent = null;
     if (metadata.events[tmpEvent]) {
       nextEvent = JSON.parse(metadata.events[tmpEvent].contents);
       nextEvent.startDate = moment.utc(nextEvent.startDate, 'YYYYMMDDTHHmm').format('MMMM DD, HH:mm');
     }
 
+    // Formats the nextEvent
     if (nextEvent) {
       nextEvent.talks = [];
 
-      if (nextEvent.performer) {
-        for (var j = 0; j < nextEvent.performer.length; j++) {
-          var talk = files['data/talks/' + nextEvent.performer[j].id + '.md'];
-          if (talk && talk.name) {
-            nextEvent.talks.push(talk);
-          }
-        }
-      }
+      Array.prototype.push.apply(nextEvent.talks, formatEventTalks(nextEvent));
 
       if (nextEvent.talks <= 2) {
         for (var k = nextEvent.talks.length; k < 2; k++) {
@@ -89,7 +101,17 @@ var bcnjs = function bcnjs(opts) {
       };
     }
 
+    // Sets the previousTalks
+    var previousTalks = [];
+    for (var i = 0; i < metadata.events.length; i++) {
+      if (i > tmpEvent && previousTalks.length <= totalPreviousTalks) {
+        var event = JSON.parse(metadata.events[i].contents);
+        Array.prototype.push.apply(previousTalks, formatEventTalks(event));
+      }
+    };
+
     metalsmith._metadata.nextEvent = nextEvent;
+    metalsmith._metadata.previousTalks = previousTalks;
     done();
   };
 };
