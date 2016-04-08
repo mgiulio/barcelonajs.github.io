@@ -196,6 +196,11 @@ section .organizer .description {
   margin-bottom: 0.5rem;
 }
 
+section .speaker .description,
+section .organizer .description {
+  text-align: left;
+}
+
 section .speaker .name,
 section .speaker .talk-title,
 section .organizer .name,
