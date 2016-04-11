@@ -7,9 +7,15 @@ The Barcelona Original.
 ## How to hack?
 
 ```
-$ git clone https://github.com/BarcelonaJS/barcelonajs.github.io.git
+$ git clone -b development https://github.com/BarcelonaJS/barcelonajs.github.io.git
 $ cd barcelonajs.github.io
 $ git clone https://github.com/BarcelonaJS/BarcelonaJS.git src/data
+```
+
+For live deployments:
+
+```
+git clone -b master https://github.com/BarcelonaJS/barcelonajs.github.io.git live
 ```
 
 Using npm:
