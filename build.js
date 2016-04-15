@@ -71,7 +71,7 @@ Metalsmith(__dirname)
   }))
   .use(collections({
     talks: {
-      pattern: 'talk/*.md',
+      pattern: 'data/talks/*.md',
       sortBy: 'startDate',
       reverse: true,
       limit: 1
@@ -79,7 +79,7 @@ Metalsmith(__dirname)
   }))
   .use(collections({
     events: {
-      pattern: 'event/*.md',
+      pattern: 'data/events/*.json',
       sortBy: 'startDate',
       reverse: true
     }
