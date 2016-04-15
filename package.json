@@ -21,7 +21,7 @@
   },
   "scripts": {
     "build": "echo 'We are fixing the build, thanks for your patience' #node  build.js",
-    "dev": "node serve.js"
+    "dev": "node --harmony serve.js"
   },
   "private": false,
   "devDependencies": {
