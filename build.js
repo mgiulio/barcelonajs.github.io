@@ -1,5 +1,6 @@
 var Metalsmith = require('metalsmith');
 var markdown = require('metalsmith-markdown');
+var jsonPlugin = require('metalsmith-json');
 var layouts = require('metalsmith-layouts');
 var assets = require('metalsmith-assets');
 var collections = require('metalsmith-collections');
@@ -83,6 +84,7 @@ Metalsmith(__dirname)
       reverse: true
     }
   }))
+  .use(jsonPlugin())
   .use(bcnjs({
     event: 'test'
   }))
