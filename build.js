@@ -41,16 +41,15 @@ var bcnjs = function bcnjs(opts) {
     var nextEvent;
 
     for (var i = 0; i < metadata.events.length; i++) {
-      var date = moment(metadata.events[i].startDate, 'YYYYMMDD:HHmm').add(2, 'days').unix();
+      var date = moment(metadata.events[i].data.startDate, 'YYYYMMDD:HHmm').add(2, 'days').unix();
       if (date >= moment().unix()) {
-        nextEvent = metadata.events[i];
+        nextEvent = metadata.events[i].data;
       }
     }
-
     nextEvent.talks = [];
 
     for (var i = 0; i < nextEvent.performer.length; i++) {
-      var talk = files['talk/' + nextEvent.performer[i].id + '.md'];
+      var talk = files['data/talks/' + nextEvent.performer[i].id + '.md'];
       if (talk.name) {
         nextEvent.talks.push(talk);
       }
