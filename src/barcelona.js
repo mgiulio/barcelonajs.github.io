@@ -38,7 +38,7 @@ $(document).ready(function() {
   };
 
   var userProfile = null;
-
+  
   if ($('#ge-btn-login').length > 0) {
     $('#ge-btn-login').on('click', function() {
       lock.show({
@@ -103,5 +103,21 @@ $(document).ready(function() {
   // Close Checkout on page navigation
   $(window).on('popstate', function() {
     handler.close();
+  });
+
+  $('#talk-submit-button').on('click', function(e) {
+    var $form = $('#talk-submit-form');
+    var title = $form.find('input[name="title"]').val();
+    var language = $form.find('select[name="language"]').val();
+    var target = $form.find('select[name="target"]').val();
+    var twitter = $form.find('input[name="twitter"]').val();
+    var description = $form.find('textarea[name="description"]').val();
+    var createIssueLink = 'https://github.com/BarcelonaJS/speakers/issues/new?title='
+      + title + '&body=---%0Alevel:%20'
+      + target + '%0Alanguage:%20'
+      + language + '%0Atwitter:%20'
+      + twitter + '%0Atags:%0A%20%20-%20hello%0A%20%20-%20node%0A---%0A%0A'
+      + description;
+    window.location.href = createIssueLink;
   });
 });
