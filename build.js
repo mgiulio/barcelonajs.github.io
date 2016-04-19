@@ -1,5 +1,6 @@
 var Metalsmith = require('metalsmith');
 var markdown = require('metalsmith-markdown');
+var jsonPlugin = require('metalsmith-json');
 var layouts = require('metalsmith-layouts');
 var assets = require('metalsmith-assets');
 var collections = require('metalsmith-collections');
@@ -40,16 +41,15 @@ var bcnjs = function bcnjs(opts) {
     var nextEvent;
 
     for (var i = 0; i < metadata.events.length; i++) {
-      var date = moment(metadata.events[i].startDate, 'YYYYMMDD:HHmm').add(2, 'days').unix();
+      var date = moment(metadata.events[i].data.startDate, 'YYYYMMDD:HHmm').add(2, 'days').unix();
       if (date >= moment().unix()) {
-        nextEvent = metadata.events[i];
+        nextEvent = metadata.events[i].data;
       }
     }
-
     nextEvent.talks = [];
 
     for (var i = 0; i < nextEvent.performer.length; i++) {
-      var talk = files['talk/' + nextEvent.performer[i].id + '.md'];
+      var talk = files['data/talks/' + nextEvent.performer[i].id + '.md'];
       if (talk.name) {
         nextEvent.talks.push(talk);
       }
@@ -70,7 +70,7 @@ Metalsmith(__dirname)
   }))
   .use(collections({
     talks: {
-      pattern: 'talk/*.md',
+      pattern: 'data/talks/*.md',
       sortBy: 'startDate',
       reverse: true,
       limit: 1
@@ -78,11 +78,12 @@ Metalsmith(__dirname)
   }))
   .use(collections({
     events: {
-      pattern: 'event/*.md',
+      pattern: 'data/events/*.json',
       sortBy: 'startDate',
       reverse: true
     }
   }))
+  .use(jsonPlugin())
   .use(bcnjs({
     event: 'test'
   }))
