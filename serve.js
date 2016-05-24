@@ -1,13 +1,13 @@
-var Metalsmith = require('metalsmith');
-var markdown = require('metalsmith-markdown');
-var layouts = require('metalsmith-layouts');
-var assets = require('metalsmith-assets');
-var collections = require('metalsmith-collections');
-var permalinks = require('metalsmith-permalinks');
-var browserSync = require('metalsmith-browser-sync');
-var metadata = require('metalsmith-metadata');
-var moment = require('moment');
-var sass = require('metalsmith-sass');
+var Metalsmith = require('metalsmith')
+var markdown = require('metalsmith-markdown')
+var layouts = require('metalsmith-layouts')
+var assets = require('metalsmith-assets')
+var collections = require('metalsmith-collections')
+var permalinks = require('metalsmith-permalinks')
+var browserSync = require('metalsmith-browser-sync')
+var metadata = require('metalsmith-metadata')
+var moment = require('moment')
+var sass = require('metalsmith-sass')
 
 /**
  * Normalize an `options` dictionary.
@@ -15,76 +15,75 @@ var sass = require('metalsmith-sass');
  * @param {Object} options
  */
 
-function normalize(options) {
-  options = options || {};
+function normalize (options) {
+  options = options || {}
 
   for (var key in options) {
-    var val = options[key];
+    var val = options[key]
     if ('string' === typeof val) {
       options[key] = {
         pattern: val
-      };
+      }
     }
   }
-  return options;
+  return options
 }
 
-var bcnjs = function bcnjs(opts) {
-  opts = normalize(opts);
+var bcnjs = function bcnjs (opts) {
+  opts = normalize(opts)
 
   return function (files, metalsmith, done) {
-    var metadata = metalsmith.metadata();
-    var tmpEvent;
-    var nextEvent;
-    var totalPreviousTalks = 10;
+    var metadata = metalsmith.metadata()
+    var tmpEvent
+    var nextEvent
+    var totalPreviousTalks = 10
 
     // Formats the talks information from the files
-    var formatEventTalks = function formatEventTalks(event) {
-      var result = [];
+    var formatEventTalks = function formatEventTalks (event) {
+      var result = []
       if (event.performer) {
         for (var j = 0; j < event.performer.length; j++) {
-          var talk = files['data/talks/' + event.performer[j].id + '.md'];
+          var talk = files['data/talks/' + event.performer[j].id + '.md']
           if (talk && talk.name) {
-            result.push(talk);
+            result.push(talk)
           }
         }
       }
-      return result;
-    };
+      return result
+    }
 
     // Get the position of the nextEvent
     for (var i = 0; i < metadata.events.length; i++) {
-      var content = JSON.parse(metadata.events[i].contents.toString('utf-8'));
+      var content = JSON.parse(metadata.events[i].contents.toString('utf-8'))
       var date = moment(content.startDate, 'YYYYMMDDTHHmm')
         .add(1, 'minutes')
-        .unix();
+        .unix()
       if (date >= moment()
-        .unix()) {
-        tmpEvent = i;
+          .unix()) {
+        tmpEvent = i
       }
     }
 
     // Initialize the nextEvent
-    nextEvent = null;
+    nextEvent = null
     if (metadata.events[tmpEvent]) {
-      nextEvent = JSON.parse(metadata.events[tmpEvent].contents);
+      nextEvent = JSON.parse(metadata.events[tmpEvent].contents)
       nextEvent.startDate = moment.utc(nextEvent.startDate, 'YYYYMMDDTHHmm')
-        .format('MMMM DD, HH:mm');
+        .format('MMMM DD, HH:mm')
     }
 
     // Formats the nextEvent
     if (nextEvent) {
-      nextEvent.talks = [];
+      nextEvent.talks = []
 
       Array.prototype.push.apply(nextEvent.talks, formatEventTalks(
-        nextEvent));
+        nextEvent))
 
       if (nextEvent.talks <= 2) {
         for (var k = nextEvent.talks.length; k < 2; k++) {
-          nextEvent.talks.push({});
+          nextEvent.talks.push({})
         }
       }
-
     } else {
       nextEvent = {
         'context': 'http://schema.org',
@@ -102,23 +101,23 @@ var bcnjs = function bcnjs(opts) {
         },
         'performer': [],
         'layout': 'page.html'
-      };
-    }
-
-    // Sets the previousTalks
-    var previousTalks = [];
-    for (i = 0; i < metadata.events.length; i++) {
-      if (i > tmpEvent && previousTalks.length <= totalPreviousTalks) {
-        var event = JSON.parse(metadata.events[i].contents);
-        Array.prototype.push.apply(previousTalks, formatEventTalks(event));
       }
     }
 
-    metalsmith._metadata.nextEvent = nextEvent;
-    metalsmith._metadata.previousTalks = previousTalks;
-    done();
-  };
-};
+    // Sets the previousTalks
+    var previousTalks = []
+    for (i = 0; i < metadata.events.length; i++) {
+      if (i > tmpEvent && previousTalks.length <= totalPreviousTalks) {
+        var event = JSON.parse(metadata.events[i].contents)
+        Array.prototype.push.apply(previousTalks, formatEventTalks(event))
+      }
+    }
+
+    metalsmith._metadata.nextEvent = nextEvent
+    metalsmith._metadata.previousTalks = previousTalks
+    done()
+  }
+}
 
 Metalsmith(__dirname)
   .source('src/')
@@ -168,6 +167,6 @@ Metalsmith(__dirname)
   }))
   .build(function (error) {
     if (error) {
-      console.log(error);
+      console.log(error)
     }
-  });
+  })

@@ -1,15 +1,15 @@
-var Metalsmith = require('metalsmith');
-var markdown = require('metalsmith-markdown');
-var jsonPlugin = require('metalsmith-json');
-var layouts = require('metalsmith-layouts');
-var assets = require('metalsmith-assets');
-var collections = require('metalsmith-collections');
-var permalinks = require('metalsmith-permalinks');
-var uglify = require('metalsmith-uglify');
-var browserSync = require('metalsmith-browser-sync');
-var helpers = require('diy-handlebars-helpers');
-var metadata = require('metalsmith-metadata');
-var sass = require('metalsmith-sass');
+var Metalsmith = require('metalsmith')
+var markdown = require('metalsmith-markdown')
+var jsonPlugin = require('metalsmith-json')
+var layouts = require('metalsmith-layouts')
+var assets = require('metalsmith-assets')
+var collections = require('metalsmith-collections')
+var permalinks = require('metalsmith-permalinks')
+var uglify = require('metalsmith-uglify')
+var browserSync = require('metalsmith-browser-sync')
+var helpers = require('diy-handlebars-helpers')
+var metadata = require('metalsmith-metadata')
+var sass = require('metalsmith-sass')
 
 /**
  * Normalize an `options` dictionary.
@@ -17,48 +17,48 @@ var sass = require('metalsmith-sass');
  * @param {Object} options
  */
 
-function normalize(options) {
-  options = options || {};
+function normalize (options) {
+  options = options || {}
 
   for (var key in options) {
-    var val = options[key];
+    var val = options[key]
     if ('string' === typeof val) {
       options[key] = {
         pattern: val
-      };
+      }
     }
   }
-  return options;
+  return options
 }
 
-var bcnjs = function bcnjs(opts) {
-  opts = normalize(opts);
-  var keys = Object.keys(opts);
+var bcnjs = function bcnjs (opts) {
+  opts = normalize(opts)
+  var keys = Object.keys(opts)
 
-  return function(files, metalsmith, done) {
-    var metadata = metalsmith.metadata();
+  return function (files, metalsmith, done) {
+    var metadata = metalsmith.metadata()
 
-    var nextEvent;
+    var nextEvent
 
     for (var i = 0; i < metadata.events.length; i++) {
-      var date = moment(metadata.events[i].data.startDate, 'YYYYMMDD:HHmm').add(2, 'days').unix();
+      var date = moment(metadata.events[i].data.startDate, 'YYYYMMDD:HHmm').add(2, 'days').unix()
       if (date >= moment().unix()) {
-        nextEvent = metadata.events[i].data;
+        nextEvent = metadata.events[i].data
       }
     }
-    nextEvent.talks = [];
+    nextEvent.talks = []
 
     for (var i = 0; i < nextEvent.performer.length; i++) {
-      var talk = files['data/talks/' + nextEvent.performer[i].id + '.md'];
+      var talk = files['data/talks/' + nextEvent.performer[i].id + '.md']
       if (talk.name) {
-        nextEvent.talks.push(talk);
+        nextEvent.talks.push(talk)
       }
     }
 
-    metalsmith._metadata.nextEvent = nextEvent;
-    done();
-  };
-};
+    metalsmith._metadata.nextEvent = nextEvent
+    done()
+  }
+}
 
 Metalsmith(__dirname)
   .source('src/')
@@ -105,8 +105,8 @@ Metalsmith(__dirname)
     destination: './assets' // relative to the build directory
   }))
   .use(uglify())
-  .build(function(error) {
+  .build(function (error) {
     if (error) {
-      console.log(error);
+      console.log(error)
     }
-  });
+  })
