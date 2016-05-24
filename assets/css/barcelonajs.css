@@ -234,7 +234,8 @@ section .organizer b {
 }
 
 .about,
-.sponsors {
+.sponsors,
+.submit-talk {
   background-color: #f5f5f5;
 }
 
@@ -312,4 +313,33 @@ input[type="email"] {
   section .sponsor-logo, section .chapter-logo {
     background-size: 100px;
   }
+}
+
+.talk-submit-form__wapper {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.talk-submit-form__field-wrapper {
+  padding: 10px 0;
+}
+
+.talk-submit-form__field-wrapper label {
+  text-align: left;
+  display: block;
+}
+
+.talk-submit-form__field-wrapper input,
+.talk-submit-form__field-wrapper textarea,
+.talk-submit-form__field-wrapper select {
+  background: transparent;
+  color: #232723;
+  padding: .25rem;
+  border: 2px solid #232723;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.talk-submit-form__field-wrapper .talk-submit-form__input-wrapper {
+  margin-right: 12px;
 }
