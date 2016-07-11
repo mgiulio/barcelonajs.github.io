@@ -126,6 +126,15 @@ function addTalksLayout() {
   }
 }
 
+/*
+function bumpTalkUrl() {
+  return function (files, metalsmith, done) {
+	var tmp = Object.keys(files).filter(k => k.match(/data\\talks//g)); // 'data\\talks/20160511-deep-dive-into-redux-performance-optimizations.html',
+	console.log(files);
+	done();
+  }
+}
+*/
 
 Metalsmith(__dirname)
   .source('src/')
@@ -162,6 +171,7 @@ Metalsmith(__dirname)
     directory: 'src/layouts',
     partials: 'src/partials'
   }))
+  //.use(bumpTalkUrl())
   .use(sass({
     outputStyle: 'expanded',
     outputDir: 'assets/css/'
