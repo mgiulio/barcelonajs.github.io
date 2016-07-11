@@ -119,6 +119,14 @@ var bcnjs = function bcnjs (opts) {
   }
 }
 
+function addTalksLayout() {
+  return function (files, metalsmith, done) {
+	metalsmith.metadata().talks.forEach(t => { if (!('layout' in t)) t.layout = 'talk.html'; });
+	done();
+  }
+}
+
+
 Metalsmith(__dirname)
   .source('src/')
   .destination('./build')
@@ -144,6 +152,7 @@ Metalsmith(__dirname)
     }
   }))
   .use(bcnjs())
+  .use(addTalksLayout())
   .use(permalinks({
     pattern: ':title'
   }))
@@ -151,9 +160,7 @@ Metalsmith(__dirname)
   .use(layouts({
     engine: 'handlebars',
     directory: 'src/layouts',
-    partials: 'src/partials',
-	'default': 'page.html',
-	pattern: '**/*.html'
+    partials: 'src/partials'
   }))
   .use(sass({
     outputStyle: 'expanded',
