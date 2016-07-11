@@ -151,7 +151,9 @@ Metalsmith(__dirname)
   .use(layouts({
     engine: 'handlebars',
     directory: 'src/layouts',
-    partials: 'src/partials'
+    partials: 'src/partials',
+	'default': 'page.html',
+	pattern: '**/*.html'
   }))
   .use(sass({
     outputStyle: 'expanded',
