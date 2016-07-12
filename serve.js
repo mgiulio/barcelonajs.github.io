@@ -36,7 +36,7 @@ var bcnjs = function bcnjs (opts) {
     var metadata = metalsmith.metadata()
     var tmpEvent
     var nextEvent
-    var totalPreviousTalks = 10
+    var totalPreviousTalks = 9999; //10
 
     // Formats the talks information from the files
     var formatEventTalks = function formatEventTalks (event) {
@@ -121,7 +121,7 @@ var bcnjs = function bcnjs (opts) {
 
 function addTalksLayout() {
   return function (files, metalsmith, done) {
-	metalsmith.metadata().talks.forEach(t => { if (!('layout' in t)) t.layout = 'talk.html'; });
+	metalsmith.metadata().talks.forEach(t => { /*if (!('layout' in t))*/ t.layout = 'talk.html'; });
 	done();
   }
 }
