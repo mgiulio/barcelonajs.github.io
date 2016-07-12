@@ -3,7 +3,43 @@
     {{> head}}
     <body>
         {{> nav}}
+		<h1>{{name}}</h1>
+		<div>
+			<h2>Author info</h2>
+			<ul>
+				<li>{{performer.name}}</li>
+				<li>{{performer.image}}</li>
+				<li>{{performer.location}}</li>
+				<li>{{performer.twitter}}</li>
+				<li>{{performer.github}}</li>
+			</ul>
+		</div>
+		<div>
+			<h2>Talk info</h2>
+			<ul>
+				<li>duration: {{duration}}</li>
+				<li>level: {{level}}</li>
+				<li>Languages: {{inLanguage}}</li>
+				<li>tags: {{tags}}</li>
+			</ul>
+		</div>
+		<div>
+			<h2>When and Where</h2>
+			<a href="{{superEvent.url}}">{{superEvent.name}}</a>
+		</div>
 		<div class="talk__desc">{{{contents}}}</div>
+		<div>
+			<h2>Material</h2>
+			{{#if workPerformed}}
+				<p><a href="{{workPerformed.url}}">presentation</a></p>
+			{{/if}}
+			{{#if workFeatured}}
+				<p><a href="{{workFeatured.id}}">source code</a></p>
+			{{/if}}
+			{{#if recordedIn}}
+				<p><a href="{{recordedIn.video.id}}">video</a></p>
+			{{/if}}
+		<div>
         {{> footer}}
     </body>
 	<!--
