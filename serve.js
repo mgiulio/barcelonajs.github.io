@@ -43,7 +43,7 @@ var bcnjs = function bcnjs (opts) {
       var result = []
       if (event.performer) {
         for (var j = 0; j < event.performer.length; j++) {
-          var talk = files['data/talks/' + event.performer[j].id + '.md']
+          var talk = files['data\\talks\\' + event.performer[j].id + '.md']
           if (talk && talk.name) {
             result.push(talk)
           }
@@ -58,7 +58,7 @@ var bcnjs = function bcnjs (opts) {
       var date = moment(content.startDate, 'YYYYMMDDTHHmm')
         .add(1, 'minutes')
         .unix()
-      if (date >= moment()
+      if (date >= moment('2016-06-20T18:45:00Z', 'YYYYMMDDTHHmm')
           .unix()) {
         tmpEvent = i
       }
