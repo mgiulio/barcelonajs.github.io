@@ -126,15 +126,20 @@ function addTalksLayout() {
   }
 }
 
-/*
 function bumpTalkUrl() {
   return function (files, metalsmith, done) {
-	var tmp = Object.keys(files).filter(k => k.match(/data\\talks//g)); // 'data\\talks/20160511-deep-dive-into-redux-performance-optimizations.html',
-	console.log(files);
+	//metalsmith.metadata().talks.forEach(t => { console.log(t.name, t.path); });
+	var tmp = Object.keys(files)
+		.filter(p => p.substring(0, 11) === 'data\\talks/')
+		.forEach(p => { 
+			var o = files[p];
+			delete files[p];
+			files[p.substring(5)] = o;
+		})
+	; 
 	done();
   }
 }
-*/
 
 Metalsmith(__dirname)
   .source('src/')
@@ -171,7 +176,7 @@ Metalsmith(__dirname)
     directory: 'src/layouts',
     partials: 'src/partials'
   }))
-  //.use(bumpTalkUrl())
+  .use(bumpTalkUrl())
   .use(sass({
     outputStyle: 'expanded',
     outputDir: 'assets/css/'
