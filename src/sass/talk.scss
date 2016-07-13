@@ -1,0 +1,30 @@
+.page-wrap {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+$sidebar-width: 300px;
+
+.talk .page-wrap {
+	display: flex;
+}
+
+.talk .page-wrap .aux {
+	box-sizing: border-box;
+	width: $sidebar-width;
+	flex: 0 0 auto;
+	overflow-x: hidden;
+	padding: 20px;
+	background-color: #f2f2f2;
+}
+.talk .page-wrap .aux:last-of-type {
+	order: 3;
+}
+
+
+.talk .page-wrap .main {
+	flex: 1 1 auto;
+	order: 2;
+	padding: 20px;
+}
+
