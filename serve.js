@@ -74,13 +74,18 @@ var bcnjs = function bcnjs (opts) {
 
     // Formats the nextEvent
     if (nextEvent) {
-      nextEvent.talks = []
+	  nextEvent.talks = []
 
-      Array.prototype.push.apply(nextEvent.talks, formatEventTalks(
-        nextEvent))
+      Array.prototype.push.apply(nextEvent.talks, formatEventTalks(nextEvent));
+		
+	  var k;
+      for (k = 0; k < nextEvent.talks.length; k++) {
+	    var md = nextEvent.talks[k].contents.toString();
+	    nextEvent.talks[k].excerpt = truncate(md, 400); // max 500
+	  }
 
       if (nextEvent.talks <= 2) {
-        for (var k = nextEvent.talks.length; k < 2; k++) {
+        for (k = nextEvent.talks.length; k < 2; k++) {
           nextEvent.talks.push({})
         }
       }
@@ -140,6 +145,17 @@ function bumpTalkUrl() {
 	done();
   }
 }
+
+function truncate(str, len) {
+    if (str.length > len && str.length > 0) {
+        var new_str = str + " ";
+        new_str = str.substr(0, len);
+        new_str = str.substr(0, new_str.lastIndexOf(" "));
+        new_str = (new_str.length > 0) ? new_str : str.substr (0, len);
+        return new_str + '...' ; 
+    }
+    return str;
+};
 
 Metalsmith(__dirname)
   .source('src/')
