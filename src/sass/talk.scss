@@ -15,16 +15,29 @@ $sidebar-width: 300px;
 	flex: 0 0 auto;
 	overflow-x: hidden;
 	padding: 20px;
+	padding-top: 40px;
 	background-color: #f2f2f2;
 }
 .talk .page-wrap .aux:last-of-type {
 	order: 3;
 }
 
-
 .talk .page-wrap .main {
 	flex: 1 1 auto;
 	order: 2;
 	padding: 20px;
+	padding-top: 40px;
+}
+
+.talk .page-wrap .main .title {
+	margin-top: 0;
+	margin-bottom: 80px;
+	text-transform: uppercase;
+	line-height: 1.2;
+	text-align: center;
+}
+
+.main .description p {
+	line-height: 1.8;
 }
 
