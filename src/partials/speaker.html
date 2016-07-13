@@ -1,9 +1,8 @@
 <aside class="widget speaker">
-	<ul>
-		<li>{{performer.name}}</li>
-		<li>{{performer.image}}</li>
-		<li>{{performer.location}}</li>
-		<li>{{performer.twitter}}</li>
-		<li>{{performer.github}}</li>
+	<img class="avatar" src="{{performer.image}}" alt="Speaker avatar">
+	<h3 class="name">{{performer.name}}</h3>
+	<ul class="socials">
+		<li class="twitter"><a href={{performer.twitter}}><img src="/assets/img/icons/twitter.svg" class="icon-member"></a></li>
+		<li class="github"><a href={{performer.github}}><img src="/assets/img/icons/github.svg" class="icon-member"></a></li>
 	</ul>
 </aside>
