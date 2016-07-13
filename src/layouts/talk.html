@@ -22,25 +22,8 @@
 				</div>
 			</div>
 			<div class="aux">
-				<aside class="widget speaker">
-					<h2>Author info</h2>
-					<ul>
-						<li>{{performer.name}}</li>
-						<li>{{performer.image}}</li>
-						<li>{{performer.location}}</li>
-						<li>{{performer.twitter}}</li>
-						<li>{{performer.github}}</li>
-					</ul>
-				</aside>
-				<aside class="widget talk-info">
-					<h2>Talk info</h2>
-					<ul>
-						<li>duration: {{duration}}</li>
-						<li>level: {{level}}</li>
-						<li>Languages: {{inLanguage}}</li>
-						<li>tags: {{tags}}</li>
-					</ul>
-				</aside>
+				{{> speaker}}
+				{{> talkinfo}}
 			</div>
 			<div class="aux">
 				<div>
