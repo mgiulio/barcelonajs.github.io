@@ -8,7 +8,6 @@ body {
 }
 
 $sidebar-width: 300px;
-$accent: #ea4b4b;
 
 .talk .page-wrap {
 	display: flex;
@@ -44,6 +43,10 @@ $accent: #ea4b4b;
 
 .main .description p {
 	line-height: 1.8;
+}
+
+.talk .widget {
+	margin-bottom: 40px;
 }
 
 .talk .widget.speaker {
@@ -86,3 +89,17 @@ $accent: #ea4b4b;
 	}
 }
 
+.talk .widget.talk-info {
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		
+		li {
+			img {
+				width: 20px;
+				height: auto;
+			}
+		}
+	}
+}
