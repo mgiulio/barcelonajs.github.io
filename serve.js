@@ -8,6 +8,7 @@ var browserSync = require('metalsmith-browser-sync')
 var metadata = require('metalsmith-metadata')
 var moment = require('moment')
 var sass = require('metalsmith-sass')
+var path = require('path')
 
 /**
  * Normalize an `options` dictionary.
@@ -43,7 +44,7 @@ var bcnjs = function bcnjs (opts) {
       var result = []
       if (event.performer) {
         for (var j = 0; j < event.performer.length; j++) {
-          var talk = files['data\\talks\\' + event.performer[j].id + '.md']
+          var talk = files['data/talks/'.replace(/(\/|\\)/g, path.sep) + event.performer[j].id + '.md']
           if (talk && talk.name) {
             result.push(talk)
           }
@@ -135,7 +136,7 @@ function bumpTalkUrl() {
   return function (files, metalsmith, done) {
 	//metalsmith.metadata().talks.forEach(t => { console.log(t.name, t.path); });
 	var tmp = Object.keys(files)
-		.filter(p => p.substring(0, 11) === 'data\\talks/')
+		.filter(p => p.substring(0, 10) === 'data/talks'.replace(/(\/|\\)/g, path.sep))
 		.forEach(p => { 
 			var o = files[p];
 			delete files[p];
