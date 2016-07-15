@@ -9,6 +9,7 @@ var metadata = require('metalsmith-metadata')
 var moment = require('moment')
 var sass = require('metalsmith-sass')
 var path = require('path')
+var Handlebars = require('handlebars');
 
 /**
  * Normalize an `options` dictionary.
@@ -157,6 +158,8 @@ function truncate(str, len) {
     }
     return str;
 };
+
+Handlebars.registerHelper('iconUrl', function(iconName) { return `/assets/img/icons/${iconName}.svg`; });
 
 Metalsmith(__dirname)
   .source('src/')
