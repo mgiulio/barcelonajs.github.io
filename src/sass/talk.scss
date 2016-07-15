@@ -137,3 +137,33 @@ $sidebar-width: 300px;
 	
 	transition: box-shadow 0.3s;
 }
+
+.talk .sponsors-grid {
+	$banner-width: 130px;
+	$banner-height: 100px;
+
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	
+	> * {
+		display: block;
+		
+		a {
+			display: block;
+			width: $banner-width;
+			height: $banner-height;
+			margin: 0 auto;
+			background-position: center;
+			background-size: contain;
+			background-repeat: no-repeat;
+			text-indent: -9999px;
+			
+			&:hover {
+				transform: scale(1.25);
+			}
+			
+			transition: transform 0.3s;
+		}
+	}
+}

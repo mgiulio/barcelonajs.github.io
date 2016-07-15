@@ -159,6 +159,7 @@ function truncate(str, len) {
     return str;
 };
 
+//Handlebars.registerHelper('imageUrl', function(img) { return `/assets/img/${img}`; });
 Handlebars.registerHelper('iconUrl', function(iconName) { return `/assets/img/icons/${iconName}.svg`; });
 
 Metalsmith(__dirname)
