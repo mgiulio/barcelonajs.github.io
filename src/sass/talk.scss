@@ -49,11 +49,11 @@ $sidebar-width: 300px;
 	line-height: 1.8;
 }
 
-.talk .widget {
-	margin-bottom: 40px;
+.talk .aux > *:not(:last-child) {
+	margin-bottom: 40px !important;
 }
 
-.talk .widget.speaker {
+.talk .speaker {
 	.avatar {
 		$size: 120px;
 		display: block;
@@ -93,17 +93,15 @@ $sidebar-width: 300px;
 	}
 }
 
-.talk .widget.talk-info {
-	ul {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		
-		li {
-			img {
-				width: 20px;
-				height: auto;
-			}
+.talk .talk-info {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	
+	li {
+		img {
+			width: 20px;
+			height: auto;
 		}
 	}
 }
