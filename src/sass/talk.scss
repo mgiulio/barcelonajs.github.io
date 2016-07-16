@@ -37,7 +37,7 @@ $sidebar-width: 300px;
 	padding-top: 40px;
 }
 
-.talk .page-wrap .main .title {
+.talk .page-wrap .main > .title {
 	margin-top: 0;
 	margin-bottom: 80px;
 	text-transform: uppercase;
@@ -208,6 +208,43 @@ $sidebar-width: 300px;
 		}
 		&.linkedin {
 			background-image: url(../img/icons/linkedin.svg);
+		}
+	}
+}
+
+.material {
+	> .title {
+		margin: 80px 0;
+		text-align: center;
+	}
+	
+	> *:not(.title) {
+		$height: 350px;
+		
+		height: $height;
+		margin-bottom: 40px;
+		
+		line-height: $height;
+		text-align: center;
+		
+		background-color: #e6e6e6;
+		border: 1px solid #ccc;
+		color: #fff;
+		
+		a {
+			color: #fff;
+		}
+		
+		position: relative;
+		
+		iframe {
+			position: absolute;
+			left: 0;
+			top: 0;
+			max-width: 100%;
+			
+			border: none;
+			margin: 0; 
 		}
 	}
 }

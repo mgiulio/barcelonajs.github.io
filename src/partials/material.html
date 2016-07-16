@@ -1,0 +1,31 @@
+<div class="slides">
+	{{#if workPerformed}}
+		<a href="{{workPerformed.url}}" target="_blank">Slides</a>
+		<iframe 
+			src="//www.slideshare.net/slideshow/embed_code/key/NWNrnMIOFqxQu6" 
+			width="560" 
+			height="350" 
+			frameborder="0" 
+			marginwidth="0" 
+			marginheight="0" 
+			scrolling="no" 
+			allowfullscreen> 
+		</iframe> 
+	{{else}}
+		<span>Not available</span>
+	{{/if}}
+</div>
+<div class="code">
+	{{#if workFeatured}}
+		<a href="{{workFeatured.url}}" target="_blank">Code</a>
+	{{else}}
+		<span>Not available</span>
+	{{/if}}
+</div>
+<div class="video">
+	{{#if recordedIn}}
+		<a href="{{recordedIn.video.id}}" target="_blank">Video</a>
+	{{else}}
+		<span>Not available</span>
+	{{/if}}
+</div>
