@@ -1,9 +1,20 @@
+//$(document).ready(embedMaterial);
+embedMaterial();
+
+var slides;
 
 function embedMaterial() {
-	var oEmbedURL = 'http://www.slideshare.net/api/oembed/2?url=http://www.slideshare.net/Couchbase/buildinganodeapplicationwithcouchbasenodeandangularbarcelonajs/&format=jsonp&callback=jsonpcb';
+	slides = $('.slides').get(0)
+	
+	var url = slides.dataset.url;
+	
+	if (! url && ! /www.slideshare.net/.test(url))
+		return;
+	
+	var oEmbedUrl = `http://www.slideshare.net/api/oembed/2?url=${url}&format=jsonp&callback=jsonpcb`;
 	
 	$.ajax({
-		url: oEmbedURL,
+		url: oEmbedUrl,
 		dataType: 'jsonp',
 		jsonpCallback: 'jsonpcb'
 	});
@@ -11,9 +22,6 @@ function embedMaterial() {
 }
 
 function jsonpcb(json) {
-	//console.log(json.html);
-	$('.slides').get(0).innerHTML = json.html;
+	slides.innerHTML = json.html;
 }
 
-//$(document).ready(embedMaterial);
-embedMaterial();

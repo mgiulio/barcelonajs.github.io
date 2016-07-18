@@ -1,20 +1,13 @@
-<div class="slides">
-	{{#if workPerformed}}
+{{#if workPerformed}}
+	<div class="slides" data-url="{{workPerformed.url}}" >
 		<a href="{{workPerformed.url}}" target="_blank">Slides</a>
-		<iframe 
-			src="//www.slideshare.net/slideshow/embed_code/key/NWNrnMIOFqxQu6" 
-			width="560" 
-			height="350" 
-			frameborder="0" 
-			marginwidth="0" 
-			marginheight="0" 
-			scrolling="no" 
-			allowfullscreen> 
-		</iframe> 
-	{{else}}
+	</div>
+{{else}}
+	<div class="slides not-available">
 		<span>Not available</span>
-	{{/if}}
-</div>
+	</div>
+{{/if}}
+
 <div class="code">
 	{{#if workFeatured}}
 		<a href="{{workFeatured.url}}" target="_blank">Code</a>
