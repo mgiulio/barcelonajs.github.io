@@ -38,7 +38,7 @@ var bcnjs = function bcnjs (opts) {
     var metadata = metalsmith.metadata()
     var tmpEvent
     var nextEvent
-    var totalPreviousTalks = 9999; //10
+    var totalPreviousTalks = 10
 
     // Formats the talks information from the files
     var formatEventTalks = function formatEventTalks (event) {
@@ -119,10 +119,19 @@ var bcnjs = function bcnjs (opts) {
         Array.prototype.push.apply(previousTalks, formatEventTalks(event))
       }
     }
+	
+	// Sets the talks archive
+    var talkArchive = [];
+    for (i = 0; i < metadata.events.length; i++) {
+        var event = JSON.parse(metadata.events[i].contents)
+        Array.prototype.push.apply(talkArchive, formatEventTalks(event))
+    }
 
     metalsmith._metadata.nextEvent = nextEvent
     metalsmith._metadata.previousTalks = previousTalks
-    done()
+	metalsmith._metadata.talkArchive = talkArchive
+    
+	done()
   }
 }
 
