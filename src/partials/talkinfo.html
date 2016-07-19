@@ -1,6 +1,21 @@
-<ul class="talk-info">
-	<li><img src="{{iconUrl 'tags'}}">{{tags}}</li>
-	<li><img src="{{iconUrl 'tags'}}">{{level}}</li>
-	<li><img src="{{iconUrl 'language'}}">{{inLanguage}}</li>
-	<li><img src="{{iconUrl 'duration'}}">{{duration}}</li>
-</ul>
+<div class="talk-info">
+	<ul class="meta">
+		<li class="level">
+			<span class="label">Level</span>
+			<span class="value">{{level}}</span>
+		</li>
+		<li class="language">
+			<span class="label">Language</span>
+			<span class="value">{{inLanguage}}</span>
+		</li>
+		<li class="duration">
+			<span class="label">Duration</span>
+			<span class="value">{{duration}}</span>
+		</li>
+	</ul>
+	<ul class="tags">
+		{{#each tags}}
+			<li>{{this}}</li>
+		{{/each}}
+	</ul>
+</div>

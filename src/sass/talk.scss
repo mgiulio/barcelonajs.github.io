@@ -94,14 +94,55 @@ $sidebar-width: 300px;
 }
 
 .talk .talk-info {
-	list-style: none;
-	margin: 0;
-	padding: 0;
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
 	
-	li {
-		img {
-			width: 20px;
-			height: auto;
+	.meta {
+		margin-bottom: 20px;
+		
+		li {
+			line-height: 40px;
+			padding: 0 10px;
+			border-bottom: 1px solid #aaa;
+			
+			display: flex;
+			justify-content: space-between;
+			
+			text-transform: none;
+			
+			> * {
+				flex: 0 0 auto;
+			}
+			
+			.label {
+				padding-left: 40px;
+				background: no-repeat left center;
+				background-size: 20px auto;
+			}
+			&.level .label {
+				background-image: url(/assets/img/icons/level.svg);
+			}
+			&.language .label {
+				background-image: url(/assets/img/icons/language.svg);
+			}
+			&.duration .label {
+				background-image: url(/assets/img/icons/duration.svg);
+			}
+		}
+	}
+	
+	.tags {
+		padding: 0 10px;
+		text-align: center;
+		
+		li {
+			display: inline-block;
+			&::before {
+				content: '#';
+			}
 		}
 	}
 }
