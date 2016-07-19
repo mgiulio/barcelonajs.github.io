@@ -197,11 +197,6 @@ Metalsmith(__dirname)
   }))
   .use(bcnjs())
   .use(addTalksLayout())
-  /*
-  .use(permalinks({
-    pattern: ':title'
-  }))
-  */
   .use(markdown())
   .use(layouts({
     engine: 'handlebars',
@@ -213,12 +208,10 @@ Metalsmith(__dirname)
     pattern: ':title'
 	,relative: false
   }))
-  /*
   .use(sass({
     outputStyle: 'expanded',
     outputDir: 'assets/css/'
   }))
-  */
   .use(assets({
     source: './assets', // relative to the working directory
     destination: './assets' // relative to the build directory
