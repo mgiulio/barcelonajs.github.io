@@ -1,6 +1,6 @@
 {{#if workPerformed}}
 	<div class="slides" data-url="{{workPerformed.url}}" >
-		<a class="embedly-card" href="{{workPerformed.url}}" target="_blank">Slides</a>
+		{{> materialLink title = "Slides" url = workPerformed.url}}
 	</div>
 {{else}}
 	<div class="slides not-available">
@@ -10,14 +10,15 @@
 
 <div class="code">
 	{{#if workFeatured}}
-		<a  class="embedly-card" href="{{workFeatured.url}}" target="_blank">Code</a>
+		{{> materialLink title = "Code" url = workFeatured.url}}
 	{{else}}
 		<span>Not available</span>
 	{{/if}}
 </div>
+
 <div class="video">
 	{{#if recordedIn}}
-		<a class="embedly-card" href="{{recordedIn.video.id}}" target="_blank">Video</a>
+		{{> materialLink title = "Video" url = recordedIn.video.id}}
 	{{else}}
 		<span>Not available</span>
 	{{/if}}
