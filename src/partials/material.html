@@ -10,14 +10,14 @@
 
 <div class="code">
 	{{#if workFeatured}}
-		<a href="{{workFeatured.url}}" target="_blank">Code</a>
+		<a  class="embedly-card" href="{{workFeatured.url}}" target="_blank">Code</a>
 	{{else}}
 		<span>Not available</span>
 	{{/if}}
 </div>
 <div class="video">
 	{{#if recordedIn}}
-		<a href="{{recordedIn.video.id}}" target="_blank">Video</a>
+		<a class="embedly-card" href="{{recordedIn.video.id}}" target="_blank">Video</a>
 	{{else}}
 		<span>Not available</span>
 	{{/if}}
