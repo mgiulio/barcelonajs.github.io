@@ -170,6 +170,8 @@ function truncate(str, len) {
 
 //Handlebars.registerHelper('imageUrl', function(img) { return `/assets/img/${img}`; });
 Handlebars.registerHelper('iconUrl', function(iconName) { return `/assets/img/icons/${iconName}.svg`; });
+Handlebars.registerHelper('twitterUrl', function(username) { return `http://twitter.com/${username}`; });
+Handlebars.registerHelper('githubUrl', function(username) { return `http://github.com/${username}`; });
 
 Metalsmith(__dirname)
   .source('src/')
