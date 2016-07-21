@@ -18,6 +18,31 @@ var
 Handlebars.registerHelper('iconUrl', function(iconName) { return `/assets/img/icons/${iconName}.svg`; });
 Handlebars.registerHelper('twitterUrl', function(username) { return `http://twitter.com/${username}`; });
 Handlebars.registerHelper('githubUrl', function(username) { return `http://github.com/${username}`; });
+Handlebars.registerHelper('socialShareUrl', function(social, urlToShare) { 
+	var url = '';
+	
+	urlToShare = encodeURI(urlToShare);
+	
+	switch (social) {
+		case 'twitter':
+			var tweetText = '...';
+			encodeURIComponent(tweetText);
+			url = `https://twitter.com/intent/tweet?url=${urlToShare}&text=${tweetText}`;
+			break;
+		case 'facebook':
+			url = `https://www.facebook.com/sharer/sharer.php?u=${urlToShare}`;
+			break;
+		case 'googleplus':
+			url = `https://plus.google.com/share?url=${urlToShare}`;
+			break;
+		case 'linkedin':
+			url = `https://www.linkedin.com/shareArticle?url=${urlToShare}&mini=true`;
+			break;
+		default:
+	}
+	
+	return url;
+});
 
 
 
