@@ -1,0 +1,48 @@
+@import '_vars';
+
+.social {
+	$size: 36px;
+	
+	display: inline-block;
+	
+	box-sizing: border-box;
+	width: $size;
+	height: $size;
+	
+	padding: 10px;
+	
+	background-color: $color-accent;
+	color: #fff;
+
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	background-origin: content-box;
+	
+	text-indent: -9999px;
+	
+	&.share {
+		border-radius: 2px;
+	}
+	
+	&.link {
+		border-radius: 50%;
+	}
+	
+	&.twitter {
+		background-image: url(../img/icons/twitter.svg);
+	}
+	&.facebook {
+		background-image: url(../img/icons/facebook.svg);
+	}
+	&.googleplus {
+		background-image: url(../img/icons/google-plus.svg);
+		padding: 7px;
+	}
+	&.linkedin {
+		background-image: url(../img/icons/linkedin.svg);
+	}
+	&.github {
+		background-image: url(../img/icons/github.svg);
+	}
+}

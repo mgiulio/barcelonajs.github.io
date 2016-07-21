@@ -1,3 +1,5 @@
+$sidebar-width: 300px;
+
 body {
 	background-color: #f5f2f2;
 }
@@ -10,8 +12,6 @@ a {
 	max-width: 1200px;
 	margin: 0 auto;
 }
-
-$sidebar-width: 300px;
 
 .talk .page-wrap {
 	display: flex;
@@ -210,48 +210,17 @@ $sidebar-width: 300px;
 }
 
 .social-buttons {
-	$size: 30px;
-	
 	text-align: center;
 	
 	> * {
-		display: inline-block;
-		box-sizing: border-box;
-		width: $size;
-		height: $size;
-		
-		margin-right: 10px;
-		&:last-child {
-			margin-right: 0;
-		}
-
-		border-radius: 2px;
-		padding: 5px;
-		
-		background-color: #ea4b4b;
-		color: #fff;
-	
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: contain;
-		background-origin: content-box;
-		
-		text-indent: -9999px;
-		
-		&.twitter {
-			background-image: url(../img/icons/twitter.svg);
-		}
-		&.facebook {
-			background-image: url(../img/icons/facebook.svg);
-		}
-		&.googleplus {
-			background-image: url(../img/icons/google-plus.svg);
-		}
-		&.linkedin {
-			background-image: url(../img/icons/linkedin.svg);
+		vertical-align: middle;
+		&:not(:last-child) {
+			margin-right: 10px;
 		}
 	}
 }
+
+
 
 .material {
 	> .title {

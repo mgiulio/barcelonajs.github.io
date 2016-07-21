@@ -9,7 +9,17 @@ var metadata = require('metalsmith-metadata')
 var moment = require('moment')
 var sass = require('metalsmith-sass')
 var path = require('path')
-var Handlebars = require('handlebars');
+
+var 
+	Handlebars = require('handlebars'),
+	handlebarHelpers = require('handlebars-helpers')({handlebars: Handlebars})
+;
+//Handlebars.registerHelper('imageUrl', function(img) { return `/assets/img/${img}`; });
+Handlebars.registerHelper('iconUrl', function(iconName) { return `/assets/img/icons/${iconName}.svg`; });
+Handlebars.registerHelper('twitterUrl', function(username) { return `http://twitter.com/${username}`; });
+Handlebars.registerHelper('githubUrl', function(username) { return `http://github.com/${username}`; });
+
+
 
 /**
  * Normalize an `options` dictionary.
@@ -167,11 +177,6 @@ function truncate(str, len) {
     }
     return str;
 };
-
-//Handlebars.registerHelper('imageUrl', function(img) { return `/assets/img/${img}`; });
-Handlebars.registerHelper('iconUrl', function(iconName) { return `/assets/img/icons/${iconName}.svg`; });
-Handlebars.registerHelper('twitterUrl', function(username) { return `http://twitter.com/${username}`; });
-Handlebars.registerHelper('githubUrl', function(username) { return `http://github.com/${username}`; });
 
 Metalsmith(__dirname)
   .source('src/')
