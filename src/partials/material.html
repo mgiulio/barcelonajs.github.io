@@ -1,25 +1,11 @@
 {{#if workPerformed}}
-	<div class="slides" data-url="{{workPerformed.url}}" >
-		{{> materialLink title = "Slides" url = workPerformed.url}}
-	</div>
-{{else}}
-	<div class="slides not-available">
-		<span>Not available</span>
-	</div>
+	{{> materialLink title = "Slides" url = workPerformed.url}}
 {{/if}}
 
-<div class="code">
-	{{#if workFeatured}}
-		{{> materialLink title = "Code" url = workFeatured.url}}
-	{{else}}
-		<span>Not available</span>
-	{{/if}}
-</div>
+{{#if workFeatured}}
+	{{> materialLink title = "Code" url = workFeatured.url}}
+{{/if}}
 
-<div class="video">
-	{{#if recordedIn}}
-		{{> materialLink title = "Video" url = recordedIn.video.id}}
-	{{else}}
-		<span>Not available</span>
-	{{/if}}
-</div>
+{{#if recordedIn}}
+	{{> materialLink title = "Video" url = recordedIn.video.id}}
+{{/if}}

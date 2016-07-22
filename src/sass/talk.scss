@@ -220,49 +220,19 @@ a {
 	}
 }
 
-
-
 .material {
 	> .title {
 		margin: 80px 0;
 		text-align: center;
 	}
-	
 	> *:not(.title) {
-		$height: 350px;
-		
-		//height: $height;
-		min-height: $height;
 		margin-bottom: 40px;
-		
-		line-height: $height;
-		text-align: center;
-		
 		background-color: #e6e6e6;
 		border: 1px solid #ccc;
-		color: #666;
-		
-		a {
-			color: #666;
-		}
-		
-		position: relative;
-		
-		/*
-		iframe {
-			position: absolute;
-			left: 0;
-			top: 0;
-			width: 100%;
-			height: $height;
-			
-			border: none;
-			margin: 0; 
-		}
-		
-		iframe + * {
-			display: none;
-		}
-		*/
+	}
+	> a {
+		display: block;
+		padding: 40px 20px;
+		text-align: center;
 	}
 }
