@@ -175,7 +175,7 @@ var bcnjs = function bcnjs (opts) {
 
 function addTalksLayout() {
   return function (files, metalsmith, done) {
-	metalsmith.metadata().talks.forEach(t => { /*if (!('layout' in t))*/ t.layout = 'talk.html'; });
+	metalsmith.metadata().talks.forEach(t => { /*if (!('layout' in t))*/ t.layout = 'talk.html'; t.permalink = `http://barcelonajs.org/${t.id}`; });
 	done();
   }
 }
