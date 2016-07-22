@@ -18,34 +18,37 @@ var
 Handlebars.registerHelper('iconUrl', function(iconName) { return `/assets/img/icons/${iconName}.svg`; });
 Handlebars.registerHelper('twitterUrl', function(username) { return `http://twitter.com/${username}`; });
 Handlebars.registerHelper('githubUrl', function(username) { return `http://github.com/${username}`; });
-Handlebars.registerHelper('socialShareUrl', function(social, urlToShare) { 
-	var url = '';
+Handlebars.registerHelper('twitterShareUrl', function(urlToShare, text) {
+	var url;
+	
+	urlToShare = encodeURI(urlToShare);
+	text = encodeURIComponent(text);
+	
+	return `https://twitter.com/intent/tweet?url=${urlToShare}&text=${text}`;
+});	
+Handlebars.registerHelper('facebookShareUrl', function(urlToShare) {
+	var url;
 	
 	urlToShare = encodeURI(urlToShare);
 	
-	switch (social) {
-		case 'twitter':
-			var tweetText = '...';
-			encodeURIComponent(tweetText);
-			url = `https://twitter.com/intent/tweet?url=${urlToShare}&text=${tweetText}`;
-			break;
-		case 'facebook':
-			url = `https://www.facebook.com/sharer/sharer.php?u=${urlToShare}`;
-			break;
-		case 'googleplus':
-			url = `https://plus.google.com/share?url=${urlToShare}`;
-			break;
-		case 'linkedin':
-			url = `https://www.linkedin.com/shareArticle?url=${urlToShare}&mini=true`;
-			break;
-		default:
-	}
+	return `https://www.facebook.com/sharer/sharer.php?u=${urlToShare}`;
+});	
+Handlebars.registerHelper('googleplusShareUrl', function(urlToShare) {
+	var url;
 	
-	return url;
-});
-
-
-
+	urlToShare = encodeURI(urlToShare);
+	
+	return `https://plus.google.com/share?url=${urlToShare}`;
+});	
+Handlebars.registerHelper('linkedinShareUrl', function(urlToShare, title) {
+	var url;
+	
+	urlToShare = encodeURI(urlToShare);
+	title = encodeURIComponent(title);
+	
+	return `https://www.linkedin.com/shareArticle?mini=true&url=${urlToShare}&title=${title}`;
+});	
+			
 /**
  * Normalize an `options` dictionary.
  *
