@@ -14,6 +14,18 @@ var
 	Handlebars = require('handlebars'),
 	handlebarHelpers = require('handlebars-helpers')({handlebars: Handlebars})
 ;
+Handlebars.registerHelper('formatDuration', function(dur) { 
+	var value;
+	
+	if (dur.substr(0, 2) === 'PT')
+		value = parseInt(dur.substr(2))
+	else if (dur.substr(0, 1) === 'P')
+		value = parseInt(dur.substr(1))
+	else
+		value = parseInt(dur)
+	
+	return value + ' min';
+});
 //Handlebars.registerHelper('imageUrl', function(img) { return `/assets/img/${img}`; });
 Handlebars.registerHelper('iconUrl', function(iconName) { return `/assets/img/icons/${iconName}.svg`; });
 Handlebars.registerHelper('twitterUrl', function(username) { return `http://twitter.com/${username}`; });

@@ -2,7 +2,7 @@
 	<ul class="meta">
 		<li class="level">
 			<span class="label">Level</span>
-			<span class="value">{{level}}</span>
+			<span class="value">{{#if level}}{{level}}{{else}}N/A{{/if}}</span>
 		</li>
 		<li class="language">
 			<span class="label">Language</span>
@@ -10,12 +10,14 @@
 		</li>
 		<li class="duration">
 			<span class="label">Duration</span>
-			<span class="value">{{duration}}</span>
+			<span class="value">{{formatDuration duration}}</span>
 		</li>
 	</ul>
-	<ul class="tags">
-		{{#each tags}}
-			<li>{{this}}</li>
-		{{/each}}
-	</ul>
+	{{#if tags}}
+		<ul class="tags">
+			{{#each tags}}
+				<li>{{this}}</li>
+			{{/each}}
+		</ul>
+	{{/if}}
 </div>
