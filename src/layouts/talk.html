@@ -14,7 +14,12 @@
 				</div>
 			</div>
 			<div class="aux">
-				{{> speaker}}
+				{{> speaker 
+					avatar = performer.image
+					name = performer.name 
+					twitter = performer.twitter 
+					github = performer.github
+				}}
 				{{> talkinfo}}
 			</div>
 			<div class="aux">

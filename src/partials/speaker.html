@@ -1,8 +1,8 @@
 <div class="speaker">
-	<img class="avatar" src="{{performer.image}}" alt="Speaker avatar">
-	<h3 class="name">{{performer.name}}</h3>
+	<img class="avatar" src="{{default avatar 'https://regmedia.co.uk/2014/08/11/gbhjuytfghu87yhji87y.png?x=648&y=429&crop=1'}}" alt="Speaker avatar">
+	<h3 class="name">{{name}}</h3>
 	<ul class="socials">
-		<li>{{> twitterLink username = performer.twitter}}</li>
-		<li>{{> githubLink username = performer.github}}</li>
+		<li>{{> twitterLink username = twitter}}</li>
+		<li>{{> githubLink username = github}}</li>
 	</ul>
 </div>
