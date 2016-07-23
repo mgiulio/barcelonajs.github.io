@@ -2,7 +2,11 @@
 	<img class="avatar" src="{{default avatar 'https://regmedia.co.uk/2014/08/11/gbhjuytfghu87yhji87y.png?x=648&y=429&crop=1'}}" alt="Speaker avatar">
 	<h3 class="name">{{name}}</h3>
 	<ul class="socials">
-		<li>{{> twitterLink username = twitter}}</li>
-		<li>{{> githubLink username = github}}</li>
+		{{#if twitter}}
+			<li>{{> twitterLink username = twitter}}</li>
+		{{/if}}
+		{{#if github}}
+			<li>{{> githubLink username = github}}</li>
+		{{/if}}
 	</ul>
 </div>
