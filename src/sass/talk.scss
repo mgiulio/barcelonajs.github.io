@@ -49,6 +49,10 @@ a {
 	line-height: 1.8;
 }
 
+.main .description h1 {
+	display: none; // Because some talk data repeta their title in the description
+}
+
 .talk .aux > *:not(:last-child) {
 	margin-bottom: 40px !important;
 }
