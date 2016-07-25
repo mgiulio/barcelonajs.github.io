@@ -1,4 +1,5 @@
 var Metalsmith = require('metalsmith')
+var ignore = require('metalsmith-ignore')
 var markdown = require('metalsmith-markdown')
 var layouts = require('metalsmith-layouts')
 var assets = require('metalsmith-assets')
@@ -242,6 +243,14 @@ Metalsmith(__dirname)
       reverse: true
     }
   }))
+  .use(ignore([ // Because ms.ignore('layouts/*') didn't work
+	'layouts/*', 
+	'partials/*', 
+	'data/README.md', 
+	'data/RELATED_EVENTS.md', 
+	'data/.git/**', 
+	'data/events/*'
+  ]))
   .use(bcnjs())
   .use(addTalksLayout())
   .use(markdown())
