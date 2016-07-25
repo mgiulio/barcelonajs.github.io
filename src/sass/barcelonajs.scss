@@ -1,7 +1,7 @@
 @import 'partials/_vars.scss';
 @import 'partials/_mixins.scss';
 
-@import 'partials/social-elements';
+@import 'partials/_social-elements.scss';
 
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700);
 
@@ -259,4 +259,4 @@ input[type="email"] {
   }
 }
 
-@import 'talk.scss';
+@import '_talk.scss';

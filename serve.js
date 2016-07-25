@@ -266,8 +266,8 @@ Metalsmith(__dirname)
 	,relative: false
   }))
   .use(sass({
-    outputStyle: 'expanded',
-    outputDir: 'assets/css/'
+    outputDir: 'assets/css/',
+    outputStyle: 'expanded'
   }))
   .use(autoprefixer())
   .use(assets({
