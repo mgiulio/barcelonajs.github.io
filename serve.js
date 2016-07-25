@@ -9,6 +9,7 @@ var browserSync = require('metalsmith-browser-sync')
 var metadata = require('metalsmith-metadata')
 var moment = require('moment')
 var sass = require('metalsmith-sass')
+var autoprefixer = require('metalsmith-autoprefixer')
 var path = require('path')
 
 var 
@@ -268,6 +269,7 @@ Metalsmith(__dirname)
     outputStyle: 'expanded',
     outputDir: 'assets/css/'
   }))
+  .use(autoprefixer())
   .use(assets({
     source: './assets', // relative to the working directory
     destination: './assets' // relative to the build directory
