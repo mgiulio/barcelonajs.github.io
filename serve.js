@@ -36,7 +36,7 @@ function normalize (options) {
   return options
 }
 
-var bcnjs = function bcnjs (opts) {
+function bcnjs(opts) {
   opts = normalize(opts)
 
   return function (files, metalsmith, done) {
