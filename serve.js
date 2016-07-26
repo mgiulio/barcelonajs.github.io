@@ -12,56 +12,7 @@ var sass = require('metalsmith-sass')
 var autoprefixer = require('metalsmith-autoprefixer')
 var path = require('path')
 
-var 
-	Handlebars = require('handlebars'),
-	handlebarHelpers = require('handlebars-helpers')({handlebars: Handlebars})
-;
-Handlebars.registerHelper('formatDuration', function(dur) { 
-	var value;
-	
-	if (dur.substr(0, 2) === 'PT')
-		value = parseInt(dur.substr(2))
-	else if (dur.substr(0, 1) === 'P')
-		value = parseInt(dur.substr(1))
-	else
-		value = parseInt(dur)
-	
-	return value + ' min';
-});
-//Handlebars.registerHelper('imageUrl', function(img) { return `/assets/img/${img}`; });
-Handlebars.registerHelper('iconUrl', function(iconName) { return `/assets/img/icons/${iconName}.svg`; });
-Handlebars.registerHelper('twitterUrl', function(username) { return `http://twitter.com/${username}`; });
-Handlebars.registerHelper('githubUrl', function(username) { return `http://github.com/${username}`; });
-Handlebars.registerHelper('twitterShareUrl', function(urlToShare, text) {
-	var url;
-	
-	urlToShare = encodeURI(urlToShare);
-	text = encodeURIComponent(text);
-	
-	return `https://twitter.com/intent/tweet?url=${urlToShare}&text=${text}`;
-});	
-Handlebars.registerHelper('facebookShareUrl', function(urlToShare) {
-	var url;
-	
-	urlToShare = encodeURI(urlToShare);
-	
-	return `https://www.facebook.com/sharer/sharer.php?u=${urlToShare}`;
-});	
-Handlebars.registerHelper('googleplusShareUrl', function(urlToShare) {
-	var url;
-	
-	urlToShare = encodeURI(urlToShare);
-	
-	return `https://plus.google.com/share?url=${urlToShare}`;
-});	
-Handlebars.registerHelper('linkedinShareUrl', function(urlToShare, title) {
-	var url;
-	
-	urlToShare = encodeURI(urlToShare);
-	title = encodeURIComponent(title);
-	
-	return `https://www.linkedin.com/shareArticle?mini=true&url=${urlToShare}&title=${title}`;
-});	
+require('./handlebar-helpers');
 			
 /**
  * Normalize an `options` dictionary.
