@@ -1,18 +1,20 @@
-var Metalsmith = require('metalsmith')
-var ignore = require('metalsmith-ignore')
-var markdown = require('metalsmith-markdown')
-var layouts = require('metalsmith-layouts')
-var assets = require('metalsmith-assets')
-var collections = require('metalsmith-collections')
-var permalinks = require('metalsmith-permalinks')
-var browserSync = require('metalsmith-browser-sync')
-var metadata = require('metalsmith-metadata')
-var moment = require('moment')
-var sass = require('metalsmith-sass')
-var autoprefixer = require('metalsmith-autoprefixer')
-var path = require('path')
+var 
+	Metalsmith = require('metalsmith')
+	,ignore = require('metalsmith-ignore')
+	,markdown = require('metalsmith-markdown')
+	,layouts = require('metalsmith-layouts')
+	,assets = require('metalsmith-assets')
+	,collections = require('metalsmith-collections')
+	,permalinks = require('metalsmith-permalinks')
+	,metadata = require('metalsmith-metadata')
+	,sass = require('metalsmith-sass')
+	,autoprefixer = require('metalsmith-autoprefixer')
+	,browserSync = require('metalsmith-browser-sync')
+	,path = require('path')
+	,moment = require('moment')
+;
 
-require('./handlebar-helpers');
+require('./handlebar-helpers')
 			
 /**
  * Normalize an `options` dictionary.
