@@ -20,11 +20,12 @@
     "node": ">=4.2.3"
   },
   "scripts": {
-    "build": "node --harmony build.js",
-    "dev": "node --harmony serve.js"
+    "dev": "node --harmony build.js",
+    "production": "cross-env NODE_ENV=production node --harmony build.js"
   },
   "private": false,
   "devDependencies": {
+    "cross-env": "^2.0.0",
     "diy-handlebars-helpers": "^1.0.10",
     "handlebars": "^3.0.3",
     "handlebars-helpers": "^0.7.3",
@@ -34,6 +35,7 @@
     "metalsmith-browser-sync": "^1.1.0",
     "metalsmith-collections": "^0.7.0",
     "metalsmith-copy": "^0.2.1",
+    "metalsmith-html-minifier": "^2.0.0",
     "metalsmith-ignore": "^0.1.2",
     "metalsmith-in-place": "^1.3.2",
     "metalsmith-json": "^0.1.2",
