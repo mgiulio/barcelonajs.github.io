@@ -1,21 +1,21 @@
 var 
-	Metalsmith = require('metalsmith')
-	,ignore = require('metalsmith-ignore')
-	,markdown = require('metalsmith-markdown')
-	,layouts = require('metalsmith-layouts')
-	,assets = require('metalsmith-assets')
-	,collections = require('metalsmith-collections')
-	,permalinks = require('metalsmith-permalinks')
-	,metadata = require('metalsmith-metadata')
-	,sass = require('metalsmith-sass')
-	,autoprefixer = require('metalsmith-autoprefixer')
-	,browserSync = require('metalsmith-browser-sync')
-	,path = require('path')
-	,moment = require('moment')
+  Metalsmith = require('metalsmith')
+  ,ignore = require('metalsmith-ignore')
+  ,markdown = require('metalsmith-markdown')
+  ,layouts = require('metalsmith-layouts')
+  ,assets = require('metalsmith-assets')
+  ,collections = require('metalsmith-collections')
+  ,permalinks = require('metalsmith-permalinks')
+  ,metadata = require('metalsmith-metadata')
+  ,sass = require('metalsmith-sass')
+  ,autoprefixer = require('metalsmith-autoprefixer')
+  ,browserSync = require('metalsmith-browser-sync')
+  ,path = require('path')
+  ,moment = require('moment')
 ;
 
 require('./handlebar-helpers')
-			
+      
 /**
  * Normalize an `options` dictionary.
  *
@@ -81,15 +81,15 @@ var bcnjs = function bcnjs (opts) {
 
     // Formats the nextEvent
     if (nextEvent) {
-	  nextEvent.talks = []
+    nextEvent.talks = []
 
       Array.prototype.push.apply(nextEvent.talks, formatEventTalks(nextEvent));
-		
-	  var k;
+    
+    var k;
       for (k = 0; k < nextEvent.talks.length; k++) {
-	    var md = nextEvent.talks[k].contents.toString();
-	    nextEvent.talks[k].excerpt = truncate(md, 400); // max 500
-	  }
+      var md = nextEvent.talks[k].contents.toString();
+      nextEvent.talks[k].excerpt = truncate(md, 400); // max 500
+    }
 
       if (nextEvent.talks <= 2) {
         for (k = nextEvent.talks.length; k < 2; k++) {
@@ -124,41 +124,41 @@ var bcnjs = function bcnjs (opts) {
         Array.prototype.push.apply(previousTalks, formatEventTalks(event))
       }
     }
-	
-	// Sets the talks archive
+  
+    // Sets the talks archive
     var talkArchive = [];
     for (i = 0; i < metadata.events.length; i++) {
-        var event = JSON.parse(metadata.events[i].contents)
-        Array.prototype.push.apply(talkArchive, formatEventTalks(event))
+      var event = JSON.parse(metadata.events[i].contents)
+      Array.prototype.push.apply(talkArchive, formatEventTalks(event))
     }
 
     metalsmith._metadata.nextEvent = nextEvent
     metalsmith._metadata.previousTalks = previousTalks
-	metalsmith._metadata.talkArchive = talkArchive
+    metalsmith._metadata.talkArchive = talkArchive
     
-	done()
+    done()
   }
 }
 
 function addTalksLayout() {
   return function (files, metalsmith, done) {
-	metalsmith.metadata().talks.forEach(t => { /*if (!('layout' in t))*/ t.layout = 'talk.html'; t.permalink = `http://barcelonajs.org/${t.id}`; });
-	done();
+    metalsmith.metadata().talks.forEach(t => { /*if (!('layout' in t))*/ t.layout = 'talk.html'; t.permalink = `http://barcelonajs.org/${t.id}`; });
+    done();
   }
 }
 
 function bumpTalkUrl() {
   return function (files, metalsmith, done) {
-	//metalsmith.metadata().talks.forEach(t => { console.log(t.name, t.path); });
-	var tmp = Object.keys(files)
-		.filter(p => p.substring(0, 10) === 'data/talks'.replace(/(\/|\\)/g, path.sep))
-		.forEach(p => { 
-			var o = files[p];
-			delete files[p];
-			files[p.substring(5)] = o;
-		})
-	; 
-	done();
+    //metalsmith.metadata().talks.forEach(t => { console.log(t.name, t.path); });
+    var tmp = Object.keys(files)
+      .filter(p => p.substring(0, 10) === 'data/talks'.replace(/(\/|\\)/g, path.sep))
+      .forEach(p => { 
+        var o = files[p];
+        delete files[p];
+        files[p.substring(5)] = o;
+      })
+    ; 
+    done();
   }
 }
 
@@ -198,12 +198,12 @@ Metalsmith(__dirname)
     }
   }))
   .use(ignore([ // Because ms.ignore('layouts/*') didn't work
-	'layouts/*', 
-	'partials/*', 
-	'data/README.md', 
-	'data/RELATED_EVENTS.md', 
-	'data/.git/**', 
-	'data/events/*'
+    'layouts/*', 
+    'partials/*', 
+    'data/README.md', 
+    'data/RELATED_EVENTS.md', 
+    'data/.git/**', 
+    'data/events/*'
   ]))
   .use(bcnjs())
   .use(addTalksLayout())
@@ -216,7 +216,7 @@ Metalsmith(__dirname)
   .use(bumpTalkUrl())
   .use(permalinks({
     pattern: ':title'
-	,relative: false
+  ,relative: false
   }))
   .use(sass({
     outputDir: 'assets/css/',
