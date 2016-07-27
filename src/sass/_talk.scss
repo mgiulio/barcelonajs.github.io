@@ -1,16 +1,7 @@
 $sidebar-width: 300px;
 
-body {
+body.talk {
 	background-color: #f5f2f2;
-}
-
-a {
-	text-decoration: none;
-}
-
-.page-wrap {
-	max-width: 1200px;
-	margin: 0 auto;
 }
 
 .talk .page-wrap {
@@ -45,11 +36,11 @@ a {
 	text-align: center;
 }
 
-.main .description p {
+.talk .main .description p {
 	line-height: 1.8;
 }
 
-.main .description h1 {
+.talk .main .description h1 {
 	display: none; // Because some talk data repeta their title in the description
 }
 
@@ -216,7 +207,7 @@ a {
 	}
 }
 
-.social-buttons {
+.talk .social-buttons {
 	text-align: center;
 	
 	> * {
@@ -227,7 +218,7 @@ a {
 	}
 }
 
-.material {
+.talk .material {
 	> .title {
 		margin: 80px 0;
 		text-align: center;
