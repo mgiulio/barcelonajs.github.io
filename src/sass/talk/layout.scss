@@ -1,0 +1,55 @@
+$sidebar-width: 300px;
+$secondary-max-height: 620px;
+$two-col-breakpoint: 800px;
+$three-col-breakpoint: 1100px;
+
+.talk {
+	.page-wrap {
+		&::after {
+			content: '';
+			display: table;
+			clear: both;
+		}
+		position: relative;
+		min-height: $secondary-max-height;
+	}
+}
+
+.talk .main,
+.talk .widget-area
+{
+	padding: 40px 20px;
+}
+
+.talk .widget-area > *:not(:last-child) {
+	margin-bottom: 40px;
+}
+
+@media screen and (min-width: $two-col-breakpoint) {
+	.talk .main {
+		box-sizing: border-box;
+		width: calc(100% - #{$sidebar-width});
+		float: left;
+	}
+	.talk .aux {
+		float: left; 
+		box-sizing: border-box;
+		width: $sidebar-width;
+		overflow-x: hidden;
+	}
+}
+
+@media screen and (min-width: $three-col-breakpoint) {
+	.talk .main {
+		width: calc(100% - 2 * #{$sidebar-width});
+		float: right;
+		margin-right: $sidebar-width;
+	}
+	.talk .secondary {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: $sidebar-width;
+		box-sizing: border-box;
+	}
+}

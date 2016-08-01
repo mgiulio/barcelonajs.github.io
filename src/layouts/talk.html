@@ -3,34 +3,11 @@
     {{> head}}
     <body class="talk">
         {{> nav}}
-		
 		<div class="page-wrap">
-			<div class="main">
-				<h1 class="title">{{name}}</h1>
-				<div class="description">{{{contents}}}</div>
-				<div class="material">
-					<h2 class="title">Material</h2>
-					{{> material}}
-				</div>
-			</div>
-			<div class="aux">
-				{{> speaker 
-					avatar = performer.image
-					name = performer.name 
-					twitter = performer.twitter 
-					github = performer.github
-				}}
-				{{> talkinfo}}
-			</div>
-			<div class="aux">
-				<a class="superevent" href="{{superEvent.url}}" title="{{superEvent.name}}">{{superEvent.name}}</a>
-				{{> socialButtons urlToShare = permalink}}
-				{{> sponsorsGrid}}
-			</div>
+			{{> talk/main}}
+			{{> talk/_aux}}
 		</div>
-		
         {{> footer}}
-		
 		<script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
 		<!--
 		<script src="//cdn.auth0.com/js/lock-7.12.min.js"></script>

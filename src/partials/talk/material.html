@@ -1,0 +1,11 @@
+{{#if workPerformed}}
+	{{> talk/materialLink title = "Slides" url = workPerformed.url}}
+{{/if}}
+
+{{#if workFeatured}}
+	{{> talk/materialLink title = "Code" url = workFeatured.url}}
+{{/if}}
+
+{{#if recordedIn}}
+	{{> talk/materialLink title = "Video" url = recordedIn.video.id}}
+{{/if}}

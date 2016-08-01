@@ -1,0 +1,16 @@
+<div class="aux">
+	<div class="widget-area primary">
+		{{> talk/speaker 
+			avatar = performer.image
+			name = performer.name 
+			twitter = performer.twitter 
+			github = performer.github
+		}}
+		{{> talk/talkinfo}}
+	</div>
+	<div class="widget-area secondary">
+		<a class="superevent" href="{{superEvent.url}}" title="{{superEvent.name}}">{{superEvent.name}}</a>
+		{{> socialButtons urlToShare = permalink}}
+		{{> talk/sponsorsGrid}}
+	</div>
+</div>
